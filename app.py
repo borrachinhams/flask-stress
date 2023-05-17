@@ -10,7 +10,7 @@ def hello_world():
 
 
 @app.route('/stress')
-def stress(time=10):
+def stress():
     time_param = request.args.get('time', default=10, type=int)
     os.system(f'/usr/bin/stress-ng --cpu 4 --fork 2 --timeout {time_param}s')
 
